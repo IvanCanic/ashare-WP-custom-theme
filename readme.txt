@@ -1,10 +1,10 @@
 === Ashare ===
-Contributors: AbrahamSetrakian
+Contributors: abrahamsetrakian
 Requires at least: 5.5
 Tested up to: 5.7
 Requires PHP: 5.6
-Stable tag: 1.0
-License: GPLv2 or later
+Stable tag: 1.1
+License: GPL-2.0-or-later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
@@ -22,6 +22,10 @@ Ashare is a simple minimalist Wordpress theme ideal for your personal blog.
 == Changelog ==
 
 Initial release
+= 1.1 =
+* Released: March 27, 2021
+* Fixed translation bugs
+* Added accessibility to menu and search form.
 
 == Copyright ==
 
@@ -37,3 +41,7 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+Image for theme screenshot, Copyright Jason Blackeye
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://stocksnap.io/photo/4B83RD7BV9

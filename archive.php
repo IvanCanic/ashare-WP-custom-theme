@@ -9,7 +9,7 @@
         <section>
             <div class="main container">
                 <main class="main__content">
-                    <h3 class="main__title"><?php _e('Category -> ','ashare'); ?><?php wp_title(''); ?></h3>
+                    <h3 class="main__title"><?php esc_html_e('Category -> ','ashare'); ?><?php wp_title(''); ?></h3>
                     <div class="main__posts">
                     <?php if(have_posts()) : ?>
                         <?php while(have_posts()) : the_post(); ?>
@@ -17,13 +17,11 @@
                         <?php endwhile; ?>
                     <?php else: ?>
                         <h2 class="main__no-posts">
-                            <?php _e('We are sorry, no posts found.', 'ashare'); ?>
+                            <?php esc_html_e('We are sorry, no posts found.', 'ashare'); ?>
                         </h2>
                     <?php endif; ?>
                     </div>
-                    <ul class="post__pagination">
-                        <?php echo paginate_links(); ?>
-                    </ul>
+                    <?php ashare_pagination(); ?>
                 </main>
                 <aside class="main__sidebar">
                     <?php get_sidebar(); ?>

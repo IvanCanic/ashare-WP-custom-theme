@@ -1,4 +1,3 @@
-
 <?php if(get_header_textcolor()) : ?>
 <div class="header__overlay" style="background:#<?php echo esc_attr(get_header_textcolor()); ?>; opacity:0.5;"></div>
 <?php endif; ?>

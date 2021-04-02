@@ -8,7 +8,7 @@
 <?php 
 $default_avatar = 'http://zacvineyard.com/blog/wp-content/themes/zac/images/default-avatar.png';
 ?>
-<h2><?php _e('Comments', 'ashare') ?></h2>
+<h2><?php esc_html_e('Comments', 'ashare') ?></h2>
 
 <?php if($comments) : ?>  
     <ol class="comment-list">
@@ -37,7 +37,7 @@ $default_avatar = 'http://zacvineyard.com/blog/wp-content/themes/zac/images/defa
 <?php if(comments_open()) : ?>
 
     <div class="main__comments-title">
-    <?php _e('leave a replay', 'ashare') ?>
+    <?php esc_html_e('leave a replay', 'ashare') ?>
     </div>
     <?php
         $comments_args = array(
@@ -55,7 +55,7 @@ $default_avatar = 'http://zacvineyard.com/blog/wp-content/themes/zac/images/defa
     
 <?php else : ?>  
 
-    <p><?php _e('The comments are closed.', 'ashare') ?></p> 
+    <p><?php esc_html_e('The comments are closed.', 'ashare') ?></p> 
 
 <?php endif; ?>
 

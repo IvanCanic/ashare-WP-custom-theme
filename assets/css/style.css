@@ -20,7 +20,6 @@
 /* -------------------------------------------------------------------------- */
 /*	0. CSS Reset
 /* -------------------------------------------------------------------------- */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;900&display=swap");
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -90,6 +89,8 @@ section.container {
   cursor: pointer;
   -webkit-transition: color .4s ease;
   transition: color .4s ease;
+  background: transparent;
+  border: none;
 }
 
 .nav__search-btn:hover, .nav__search-btn:focus {
@@ -223,9 +224,8 @@ section.container {
   color: var(--secondary-color);
 }
 
-.nav__menu-list li ul, .nav ul li ul {
+.nav__menu-list ul, .nav ul ul {
   list-style: none;
-  display: none;
   background-color: var(--primary-color);
   position: absolute;
   top: 100%;
@@ -244,14 +244,22 @@ section.container {
   max-width: 32rem;
   -webkit-transition: all 1s ease-in;
   transition: all 1s ease-in;
-  -webkit-animation: listShow 1s;
-          animation: listShow 1s;
-}
-
-.nav__menu-list li:hover > ul, .nav__menu-list li:focus > ul, .nav__menu-list li:active > ul, .nav ul li:hover > ul, .nav ul li:focus > ul, .nav ul li:active > ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  visibility: hidden;
+}
+
+.nav__menu-list li:hover > ul, .nav ul li:hover > ul {
+  visibility: visible;
+  -webkit-animation: listShow 0.5s;
+          animation: listShow 0.5s;
+}
+
+.nav__menu-list a:focus ~ ul, .nav ul a:focus ~ ul {
+  visibility: visible;
+  -webkit-animation: listShow 0.5s;
+          animation: listShow 0.5s;
 }
 
 .nav__menu-list li.has-child::after, .nav ul li.has-child::after {
@@ -269,6 +277,8 @@ section.container {
   cursor: pointer;
   -webkit-transition: color .4s ease;
   transition: color .4s ease;
+  border: none;
+  background: transparent;
 }
 
 .nav__menu-list-close:hover, .nav__menu-list-close:focus, .nav ul-close:hover, .nav ul-close:focus {
@@ -317,6 +327,8 @@ section.container {
   -webkit-transition: opacity 0.5s ease;
   transition: opacity 0.5s ease;
   margin-right: 2rem;
+  background: transparent;
+  border: none;
 }
 
 .nav__menu-toggle:hover {
@@ -329,6 +341,7 @@ section.container {
   background: var(--primary-color);
   -webkit-transition: 2s ease;
   transition: 2s ease;
+  position: relative;
 }
 
 .nav__bar::after {
@@ -337,7 +350,8 @@ section.container {
   height: 5px;
   background: var(--primary-color);
   position: absolute;
-  top: 10px;
+  top: 12px;
+  left: 0;
   -webkit-transition: -webkit-transform 1s;
   transition: -webkit-transform 1s;
   transition: transform 1s;
@@ -350,27 +364,12 @@ section.container {
   height: 5px;
   background: var(--primary-color);
   position: absolute;
-  top: 35px;
+  top: -12px;
+  left: 0;
   -webkit-transition: -webkit-transform 1s;
   transition: -webkit-transform 1s;
   transition: transform 1s;
   transition: transform 1s, -webkit-transform 1s;
-}
-
-.nav__menu-toggle.active .nav__bar {
-  background: transparent;
-}
-
-.nav__menu-toggle.active .nav__bar::before {
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-  top: 20px;
-}
-
-.nav__menu-toggle.active .nav__bar::after {
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-  top: 20px;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -518,6 +517,12 @@ section.container {
   font-size: 2rem;
   padding: 1rem 2rem;
   margin-bottom: 1rem;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.ashare-search__input:focus {
+  border: 2px solid var(--primary-color);
 }
 
 .ashare-search__btn {
@@ -534,6 +539,7 @@ section.container {
 .ashare-search__btn:hover, .ashare-search__btn:focus {
   background: var(--secondary-color);
   color: var(--white-color);
+  border: 2px solid var(--primary-color);
 }
 
 .ashare-search__close {
@@ -548,11 +554,14 @@ section.container {
   transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
   transition: transform 0.3s, -webkit-transform 0.3s;
+  background: transparent;
+  border: none;
 }
 
-.ashare-search__close:hover {
+.ashare-search__close:hover, .ashare-search__close:focus {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
+  color: var(--white-color);
 }
 
 /* -------------------------------------------------------------------------- */

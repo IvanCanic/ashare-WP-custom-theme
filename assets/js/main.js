@@ -1,10 +1,10 @@
-scrollTop();
-menuControll();
-sliderControll();
-searchModalControll();
+AshareScrollTop();
+AshareMenuControll();
+AshareSliderControll();
+AshareSearchModalControll();
 
 
-function searchModalControll() {
+function AshareSearchModalControll() {
 
     let searchClose = document.querySelector('.ashare-search__close');
 
@@ -25,10 +25,11 @@ function searchModalControll() {
 
 };
 
-function menuControll() {
+function AshareMenuControll() {
 
-    let createCloseBtn = document.createElement('div');
+    let createCloseBtn = document.createElement('button');
     createCloseBtn.classList.add('nav__menu-list-close');
+    createCloseBtn.type = 'button';
     createCloseBtn.tabIndex = 0;
     createCloseBtn.innerHTML = '<i class="far fa-window-close"></i>';
 
@@ -47,15 +48,17 @@ function menuControll() {
     });
     
     menuToggler.addEventListener('click', () => {
-
+        if(menuList){
         menuList.classList.add('active');
         menuList.style.animation = 'menuOpen 3s';
-    
+        }
     });
 
-    menuClose.addEventListener('click', () => {
-        menuList.classList.remove('active');
-    })
+    if(menuClose){
+        menuClose.addEventListener('click', () => {
+            menuList.classList.remove('active');
+        })
+    }
 
     if(menuList) {
 
@@ -69,9 +72,28 @@ function menuControll() {
         
     }
 
+    let anchors = document.querySelectorAll('ul li a');
+    let parents = document.querySelectorAll('li ul');
+
+    anchors.forEach( anchor => {
+        anchor.addEventListener('focus', e => {
+            if(e.currentTarget.nextElementSibling !== null && e.currentTarget.nextElementSibling.localName == 'ul') {
+                e.currentTarget.nextElementSibling.style.visibility = 'visible';
+            }
+        });
+        anchor.addEventListener('focusout', e => {
+            parents.forEach( parent => {
+                parent.style.visibility = 'hidden';
+                if( parent.parentElement.id == e.currentTarget.parentElement.id) {
+                    e.currentTarget.nextElementSibling.style.visibility = 'visible';
+                }
+            });
+        });
+    });
+
 };
 
-function sliderControll() {
+function AshareSliderControll() {
 
     let buttonContainer = document.querySelector('.slider__btns');
     if (buttonContainer) {
@@ -107,7 +129,7 @@ function sliderControll() {
 
 };
 
-function scrollTop() {
+function AshareScrollTop() {
 
     let scrollBtn = document.querySelector('#scroll-up');
 

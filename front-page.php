@@ -8,7 +8,7 @@
 <?php get_header(); ?>
     
         <section class="container">
-            <h2 class="section__title"><?php _e('Popular posts', 'ashare'); ?></h2>
+            <h2 class="section__title"><?php esc_html_e('Popular posts', 'ashare'); ?></h2>
             <div class="slider" >
                 <?php get_template_part('template-parts/layout/slider'); ?>
             </div>
@@ -25,13 +25,11 @@
                         <?php endwhile; ?>
                     <?php else: ?>
                         <h2 class="main__no-posts">
-                            <?php _e('We are sorry, no posts found.', 'ashare'); ?>
+                            <?php esc_html_e('We are sorry, no posts found.', 'ashare'); ?>
                         </h2>
                     <?php endif; ?> 
                     </div>
-                    <ul class="post__pagination">
-                        <?php echo paginate_links(); ?>
-                    </ul>
+                    <?php ashare_pagination(); ?>
                 </main>
                 <aside class="main__sidebar">
                     <?php get_sidebar(); ?>

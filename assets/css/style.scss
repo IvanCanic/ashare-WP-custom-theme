@@ -22,8 +22,6 @@
 /*	0. CSS Reset
 /* -------------------------------------------------------------------------- */
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;900&display=swap');
-
 $sm: 60em;
 $md: 70em;
 
@@ -97,6 +95,8 @@ section.container {
         font-size: 3rem;
         cursor: pointer;
         transition: color .4s ease;
+        background: transparent;
+        border: none;
 
         &:hover, &:focus {
             color: var(--secondary-color);
@@ -189,9 +189,9 @@ section.container {
             color: var(--secondary-color);
         }
 
-        li ul {
+        ul {
             list-style: none;
-            display: none;
+            //display: none;
             background-color: var(--primary-color);
             position: absolute;
             top:100%;
@@ -209,12 +209,22 @@ section.container {
             min-width: max-content;
             max-width: 32rem;
             transition: all 1s ease-in;
-            animation: listShow 1s;
+            //animation: listShow 1s;
             
+            //width:0;
+            //opacity:0;
+            display:flex;
+            visibility: hidden;
         }
 
-        li:hover > ul, li:focus > ul, li:active > ul {
-            display: flex;
+        li:hover > ul  {
+            visibility: visible;
+            animation: listShow 0.5s;
+        }
+
+        a:focus ~ ul {
+            visibility: visible;
+            animation: listShow 0.5s;
         }
 
         li.has-child::after {
@@ -231,6 +241,9 @@ section.container {
             font-size: 5rem;
             cursor: pointer;
             transition: color .4s ease;
+
+            border:none;
+            background: transparent;
 
             &:hover, &:focus {
                 color: var(--white-color);
@@ -273,6 +286,10 @@ section.container {
 
         margin-right: 2rem;
 
+        background: transparent;
+        border: none;
+        
+
         &:hover {
             opacity:0.5;
         }
@@ -283,6 +300,7 @@ section.container {
         height: 5px;
         background: var(--primary-color);
         transition: 2s ease;
+        position: relative;
     }
 
     &__bar::after {
@@ -291,7 +309,8 @@ section.container {
         height: 5px;
         background: var(--primary-color);
         position: absolute;
-        top: 10px;
+        top: 12px;
+        left:0;
         transition: transform 1s;
     }
 
@@ -301,22 +320,11 @@ section.container {
         height: 5px;
         background: var(--primary-color);
         position: absolute;
-        top: 35px;
+        top: -12px;
+        left:0;
         transition: transform 1s;
     }
 
-    &__menu-toggle.active &__bar {
-        background: transparent;
-    }
-
-    &__menu-toggle.active &__bar::before {
-        transform: rotate(45deg);
-        top:20px;
-    }
-    &__menu-toggle.active &__bar::after {
-        transform: rotate(-45deg);
-        top:20px;
-    }
 }
 
 /* -------------------------------------------------------------------------- */
@@ -433,6 +441,12 @@ section.container {
         font-size: 2rem;
         padding: 1rem 2rem;
         margin-bottom: 1rem;
+
+        transition: all 1s;
+
+        &:focus {
+            border: 2px solid var(--primary-color);
+        }
     }
 
     &__btn {
@@ -447,6 +461,7 @@ section.container {
         &:hover, &:focus {
             background: var(--secondary-color);
             color: var(--white-color);
+            border: 2px solid var(--primary-color);
         }
     }
 
@@ -459,8 +474,12 @@ section.container {
         transform: scale(1);
         transition: transform 0.3s;
 
-        &:hover {
+        background: transparent;
+        border:none;
+
+        &:hover, &:focus {
             transform: scale(1.2);
+            color: var(--white-color);
         }
     }
     

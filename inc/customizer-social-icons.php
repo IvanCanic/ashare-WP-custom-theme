@@ -11,13 +11,13 @@ function AshareCreateSocialIcons($wp_customize) {
     $socialIcons = ['facebook', 'instagram', 'twitter', 'behance', 'youtube'];
 
     foreach($socialIcons as $icon) {
-        $description_icon = 'Add ' . $icon . ' url';
         $wp_customize->add_setting( $icon, array(
             'sanitize_callback' => 'ashare_sanitize_url',
             'type' => 'theme_mod'
         ));
         $wp_customize->add_control( $icon, array(
-            'label' => __($description_icon, 'ashare'),
+            /* translators: %s: Social icon name */
+            'label' => sprintf( esc_html__('Add %s url', 'ashare'), $icon),
             'section' => 'social',
             'settings' => $icon,
             'priority' => 2
@@ -27,5 +27,3 @@ function AshareCreateSocialIcons($wp_customize) {
 }
 
 add_action( 'customize_register', 'AshareCreateSocialIcons');
-
-?>

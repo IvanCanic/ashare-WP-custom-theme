@@ -3,16 +3,18 @@
                 <div class="nav__navigation">
                     <?php get_template_part('template-parts/layout/social', 'links'); ?>
                     <div class="nav__buttons">
-                        <div class="nav__menu-toggle" tabindex="0">
+                        <button type="button" class="nav__menu-toggle" tabindex="1">
                             <div class="nav__bar"></div>
-                        </div>
-                        <div class="nav__search-btn" tabindex="0">
+                        </button>
+                        <button class="nav__search-btn" tabindex="1">
                             <i class="fas fa-search"></i>
-                        </div>
+                        </button>
                     </div>
-                    <?php 
-                        if ( has_nav_menu( 'primary_menu' ) ) {
-                        $menuargs = array(
+                    <?php
+                     if ( has_nav_menu( 'primary-menu' ) ) :
+                        $ashare_registred_menus = get_registered_nav_menus();
+                        if ( isset($ashare_registred_menus['primary-menu'])) {
+                        $ashare_menuargs = array(
                             'menu'                 => '',
                             'container'            => '',
                             'container_class'      => '',
@@ -30,20 +32,22 @@
                             'item_spacing'         => 'preserve',
                             'depth'                => 0,
                             'walker'               => '',
-                            'theme_location'       => 'primary_menu'
+                            'theme_location'       => 'primary-menu',
                         );
-                        wp_nav_menu( $menuargs );
+                        wp_nav_menu( $ashare_menuargs );
                     }
+
+                endif;
                     ?>
                 </div>
                 <?php
-                    $custom_logo_id = get_theme_mod( 'custom_logo' );
-                    $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+                    $ashare_custom_logo_id = get_theme_mod( 'custom_logo' );
+                    $ashare_logo = wp_get_attachment_image_src( $ashare_custom_logo_id , 'full' );
  
                     if ( has_custom_logo() ) {
-                        echo '<a href="' . home_url('/') . '" class="nav__brand"><img src="' . esc_url( $logo[0] ) . '" alt="' . esc_attr(get_bloginfo( 'name' )) . '"></a>';
+                        echo '<a href="' . esc_attr(home_url('/')) . '" class="nav__brand"><img src="' . esc_url( $ashare_logo[0] ) . '" alt="' . esc_attr(get_bloginfo( 'name' )) . '"></a>';
                     } else {
-                    echo '<a href="' . home_url('/') . '" class="nav__brand">' . esc_attr(get_bloginfo( 'name' )) . '</a>';
+                    echo '<a href="' . esc_attr(home_url('/')) . '" class="nav__brand">' . esc_attr(get_bloginfo( 'name' )) . '</a>';
                     }
                 ?>
             </div>

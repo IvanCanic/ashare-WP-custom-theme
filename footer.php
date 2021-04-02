@@ -10,7 +10,7 @@
         <?php get_template_part('template-parts/layout/social', 'links'); ?>
     </div>
         <div class="footer__copy container">
-        <?php echo date("Y");  _e(' all rights reserved', 'ashare'); ?> &copy;
+        <?php echo esc_html(date("Y"));  esc_html_e(' all rights reserved', 'ashare'); ?> &copy;
         </div>
 </footer>
 
