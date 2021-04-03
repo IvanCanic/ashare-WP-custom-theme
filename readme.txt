@@ -3,7 +3,7 @@ Contributors: abrahamsetrakian
 Requires at least: 5.5
 Tested up to: 5.7
 Requires PHP: 5.6
-Stable tag: 1.1
+Stable tag: 1.2
 License: GPL-2.0-or-later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,9 @@ Initial release
 * Released: March 27, 2021
 * Fixed translation bugs
 * Added accessibility to menu and search form.
+= 1.2 =
+* Released: April 02, 2021
+* Added custom background
 
 == Copyright ==
 

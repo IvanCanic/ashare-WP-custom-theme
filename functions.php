@@ -7,7 +7,7 @@ function ashareScriptManager() {
 
     wp_enqueue_style( 'montserrat', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;900&display=swap', array(), $ashare_ver_num );
     wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/vendor/css/all.css', array(), $ashare_ver_num);
-    wp_enqueue_style( 'ashare-css', get_template_directory_uri() . '/assets/css/style.css', array(), $ashare_ver_num);
+    wp_enqueue_style( 'ashare-css', get_template_directory_uri() . '/assets/css/main.css', array(), $ashare_ver_num);
     wp_enqueue_style( 'default-css', get_template_directory_uri() . '/style.css', array(), $ashare_ver_num);
 
     wp_enqueue_script( 'ashare-js', get_template_directory_uri(  ) . '/assets/js/main.js', array(), $ashare_ver_num, true );
@@ -29,8 +29,8 @@ function ashareSmallParts() {
         'flex-width'           => true,
         'header-text'          => array( 'site-title', 'site-description' ),
         'unlink-homepage-logo' => true, 
-    );
-    add_theme_support('custom-logo', $defaults );
+    ); 
+    add_theme_support( 'custom-logo', $defaults );
 
     $headerArgs = array(
         'default-image'      => '',
@@ -47,6 +47,14 @@ function ashareSmallParts() {
     }
 
     add_editor_style();
+
+    add_theme_support( 'custom-background',
+        [
+            'default-color' => 'ffffff',
+            'default-image' => '',
+            'default-repeat' => 'no-repeat',
+        ]
+    );
 
 }
 

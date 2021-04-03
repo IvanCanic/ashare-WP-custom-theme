@@ -11,33 +11,32 @@
                         </button>
                     </div>
                     <?php
-                     if ( has_nav_menu( 'primary-menu' ) ) :
+                     if ( has_nav_menu( 'primary-menu' ) ){
                         $ashare_registred_menus = get_registered_nav_menus();
                         if ( isset($ashare_registred_menus['primary-menu'])) {
-                        $ashare_menuargs = array(
-                            'menu'                 => '',
-                            'container'            => '',
-                            'container_class'      => '',
-                            'container_id'         => '',
-                            'container_aria_label' => '',
-                            'menu_class'           => 'nav__menu-list',
-                            'menu_id'              => '',
-                            'echo'                 => true,
-                            'fallback_cb'          => false,
-                            'before'               => '',
-                            'after'                => '',
-                            'link_before'          => '',
-                            'link_after'           => '',
-                            'items_wrap'           => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                            'item_spacing'         => 'preserve',
-                            'depth'                => 0,
-                            'walker'               => '',
-                            'theme_location'       => 'primary-menu',
-                        );
-                        wp_nav_menu( $ashare_menuargs );
+                        wp_nav_menu( [ 
+                        'menu'   => '',
+                        'container'            => '',
+                        'container_class'      => '',
+                        'container_id'         => '',
+                        'container_aria_label' => '',
+                        'menu_class'           => 'nav__menu-list',
+                        'menu_id'              => '',
+                        'echo'                 => true,
+                        'fallback_cb'          => false,
+                        'before'               => '',
+                        'after'                => '',
+                        'link_before'          => '',
+                        'link_after'           => '',
+                        'items_wrap'           => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                        'item_spacing'         => 'preserve',
+                        'depth'                => 0,
+                        'walker'               => '',
+                        'theme_location'       => 'primary-menu'
+                        ]);
                     }
-
-                endif;
+                     }
+                
                     ?>
                 </div>
                 <?php
