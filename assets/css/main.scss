@@ -290,7 +290,7 @@ section.container {
         border: none;
         
 
-        &:hover {
+        &:hover, &:focus {
             opacity:0.5;
         }
     }
@@ -843,7 +843,7 @@ section.container {
             transition: all .4s;
         }
 
-        & a:hover {
+        & a:hover, & a:focus {
             color: var(--secondary-color);
         }
     }
@@ -1070,7 +1070,7 @@ section.container {
                 transition: all .3s ease;
             }
 
-            & > a:hover {
+            & > a:hover, & > a:focus {
                 color: var(--secondary-color);
             }
         }

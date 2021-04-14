@@ -7,7 +7,7 @@
 
 <?php get_header(); ?>
         <section id="main-section">
-            <div class="main container">
+            <div id="content" class="main container">
                 <main class="main__content">
                     <h3 class="main__title"><?php bloginfo('name'); ?></h3>
                     <div class="main__posts">

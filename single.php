@@ -7,7 +7,7 @@
 
 <?php get_header(); ?>
         <section id="main-section">
-            <div class="main container">
+            <div id="content" class="main container">
                 <main class="main__content">
                     <?php if(have_posts()) : ?>
                     <?php while(have_posts()) : the_post(); ?>

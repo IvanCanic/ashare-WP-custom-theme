@@ -331,7 +331,7 @@ section.container {
   border: none;
 }
 
-.nav__menu-toggle:hover {
+.nav__menu-toggle:hover, .nav__menu-toggle:focus {
   opacity: 0.5;
 }
 
@@ -979,7 +979,7 @@ section.container {
   transition: all .4s;
 }
 
-.main__category a:hover {
+.main__category a:hover, .main__category a:focus {
   color: var(--secondary-color);
 }
 
@@ -1226,7 +1226,7 @@ section.container {
   transition: all .3s ease;
 }
 
-.post__share-social > a:hover {
+.post__share-social > a:hover, .post__share-social > a:focus {
   color: var(--secondary-color);
 }
 
@@ -1480,3 +1480,4 @@ section.container {
             transform: translateX(0);
   }
 }
+/*# sourceMappingURL=main.css.map */

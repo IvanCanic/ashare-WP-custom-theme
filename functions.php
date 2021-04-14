@@ -80,7 +80,6 @@ function ashareSidebar() {
 add_action( 'widgets_init', 'ashareSidebar');
 
 // Loading Social Icon Customizer
-//require_once( get_template_directory() . '/inc/customizer-social-icons.php' );
 require_once( __DIR__ . '/inc/customizer-social-icons.php');
 
 // Loading Theme Template Helpers Functions

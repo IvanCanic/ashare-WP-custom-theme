@@ -6,7 +6,7 @@
 ?>
 
 <?php 
-$default_avatar = 'http://zacvineyard.com/blog/wp-content/themes/zac/images/default-avatar.png';
+$default_avatar = get_template_directory_uri() . '/assets/images/comments-avatar.jpg';
 ?>
 <h2><?php esc_html_e('Comments', 'ashare') ?></h2>
 

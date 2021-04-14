@@ -69,27 +69,27 @@ function AshareMenuControll() {
                 element.classList.add('has-child');
             }
         });
-        
-    }
 
-    let anchors = document.querySelectorAll('ul li a');
-    let parents = document.querySelectorAll('li ul');
+        let anchors = menuList.querySelectorAll('ul li a');
+        let parents = menuList.querySelectorAll('li ul');
 
-    anchors.forEach( anchor => {
-        anchor.addEventListener('focus', e => {
-            if(e.currentTarget.nextElementSibling !== null && e.currentTarget.nextElementSibling.localName == 'ul') {
-                e.currentTarget.nextElementSibling.style.visibility = 'visible';
-            }
-        });
-        anchor.addEventListener('focusout', e => {
-            parents.forEach( parent => {
-                parent.style.visibility = 'hidden';
-                if( parent.parentElement.id == e.currentTarget.parentElement.id) {
+        anchors.forEach( anchor => {
+            anchor.addEventListener('focus', e => {
+                if(e.currentTarget.nextElementSibling !== null && e.currentTarget.nextElementSibling.localName == 'ul') {
                     e.currentTarget.nextElementSibling.style.visibility = 'visible';
                 }
             });
+            anchor.addEventListener('focusout', e => {
+                parents.forEach( parent => {
+                    parent.style.visibility = 'hidden';
+                    if( parent.parentElement.id == e.currentTarget.parentElement.id) {
+                        e.currentTarget.nextElementSibling.style.visibility = 'visible';
+                    }
+                });
+            });
         });
-    });
+
+    }
 
 };
 

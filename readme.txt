@@ -3,7 +3,7 @@ Contributors: abrahamsetrakian
 Requires at least: 5.5
 Tested up to: 5.7
 Requires PHP: 5.6
-Stable tag: 1.2
+Stable tag: 1.3
 License: GPL-2.0-or-later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -29,6 +29,9 @@ Initial release
 = 1.2 =
 * Released: April 02, 2021
 * Added custom background
+= 1.3 =
+* Released: April 13, 2021
+* Added Skip links
 
 == Copyright ==
 

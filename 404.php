@@ -7,7 +7,7 @@
 
 <?php get_header(); ?>
         <section>
-            <div class="main container main__404">
+            <div id="content" class="main container main__404">
 
                 <h1 class="main__404-title"><?php esc_html_e('404', 'ashare'); ?></h1>
 

@@ -15,8 +15,6 @@ function ashare_get_prev_post($id) {
         ),
     );
 
-    //return wp_kses($prevthumbnail, $allowedTags);
-
     return printf('%1$s', wp_kses($thumbnail, $allowedTags));
 }
 ?>
@@ -24,8 +22,6 @@ function ashare_get_prev_post($id) {
 <div class="main__x-left">
 
     <?php if($asharePrevPost) : ?>
-    <?php //$prevthumbnail = get_the_post_thumbnail($prevPost->ID, array(100,100) );?>
-    <?php //echo $prevthumbnail; ?>
     <?php ashare_get_prev_post($asharePrevPost->ID); ?>
     <div class="main__x-left-desc"><?php esc_html_e('Previuos Post', 'ashare'); ?></div>
     <?php previous_post_link('%link',"  <p class=\"main__x-left-title\">%title</p>", TRUE); ?>
@@ -36,8 +32,6 @@ function ashare_get_prev_post($id) {
 <div class="main__x-right">
 
     <?php if($AshareNextPost) : ?>
-    <?php //$nextthumbnail = get_the_post_thumbnail($nextPost->ID, array(100,100) ); ?>
-    <?php //echo $nextthumbnail; ?>
     <?php ashare_get_prev_post($AshareNextPost->ID); ?>
     <div class="main__x-right-desc"><?php esc_html_e('Next Post','ashare'); ?></div>
     <?php next_post_link('%link',"  <p class=\"main__x-right-title\">%title</p>", TRUE); ?>

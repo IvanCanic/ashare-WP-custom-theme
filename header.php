@@ -14,6 +14,9 @@
 </head>
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
+
+    <a class="skip-link screen-reader-text" href="#content" tabindex="1"><?php esc_html_e( 'Skip to content', 'ashare' ); ?></a>
+
     <div class="ashare-search">
         <?php get_search_form(); ?>
     </div>

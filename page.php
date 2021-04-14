@@ -7,7 +7,7 @@
 
 <?php get_header(); ?>
         <section>
-            <div class="main container">
+            <div id="content" class="main container">
                 <main class="main__content">
                     <div class="main__posts">
                     <?php if(have_posts()) : ?>

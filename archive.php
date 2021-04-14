@@ -7,7 +7,7 @@
 
 <?php get_header(); ?>
         <section>
-            <div class="main container">
+            <div id="content" class="main container">
                 <main class="main__content">
                     <h3 class="main__title"><?php esc_html_e('Category -> ','ashare'); ?><?php wp_title(''); ?></h3>
                     <div class="main__posts">

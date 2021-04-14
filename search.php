@@ -13,7 +13,7 @@
 
 <?php get_header() ?>
         <section id="search-section">
-            <div class="main container">
+            <div id="content" class="main container">
                 <main class="main__content">
                     <h3 class="main__title"><?php esc_html_e('Search results for: ', 'ashare'); echo esc_attr(get_search_query()); ?></h3>
                     <div class="main__posts">
