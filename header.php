@@ -17,9 +17,6 @@
 
     <a class="skip-link screen-reader-text" href="#content" tabindex="1"><?php esc_html_e( 'Skip to content', 'ashare' ); ?></a>
 
-    <div class="ashare-search">
-        <?php get_search_form(); ?>
-    </div>
         <?php get_template_part('template-parts/layout/navbar'); ?>
         <?php if( is_home() || is_front_page() ) : ?>
         <div class="container">

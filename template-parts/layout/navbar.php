@@ -1,15 +1,6 @@
 <nav class="nav">
             <div class="container">
                 <div class="nav__navigation">
-                    <?php get_template_part('template-parts/layout/social', 'links'); ?>
-                    <div class="nav__buttons">
-                        <button type="button" class="nav__menu-toggle" tabindex="1">
-                            <div class="nav__bar"></div>
-                        </button>
-                        <button class="nav__search-btn" tabindex="1">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
                     <?php
                      if ( has_nav_menu( 'primary-menu' ) ){
                         $ashare_registred_menus = get_registered_nav_menus();
@@ -38,6 +29,18 @@
                      }
                 
                     ?>
+                    <?php get_template_part('template-parts/layout/social', 'links'); ?>
+                    <div class="nav__buttons">
+                        <button class="nav__search-btn" tabindex="1">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <div class="ashare-search">
+                            <?php get_search_form(); ?>
+                        </div>
+                        <button type="button" class="nav__menu-toggle" tabindex="1">
+                            <div class="nav__bar"></div>
+                        </button>
+                    </div>
                 </div>
                 <?php
                     $ashare_custom_logo_id = get_theme_mod( 'custom_logo' );
